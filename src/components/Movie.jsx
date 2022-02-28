@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { MovieData } from '../dataClasses';
+import React, { Component } from "react";
+import { MovieData } from "../dataClasses";
 
 class Movie extends Component {
   constructor(props) {
@@ -8,16 +8,15 @@ class Movie extends Component {
 
   render() {
     const { title, description, year, genre } = this.props.data;
-    return(
+    return (
       <tr>
         <td>{title}</td>
         <td>{description}</td>
         <td>{year}</td>
         <td>{genre}</td>
       </tr>
-    )
+    );
   }
 }
 
 export default Movie;
-
