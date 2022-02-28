@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-import { MovieData, movieCollections } from './movie';
+import { MovieData } from './dataClasses';
+import App from './components/App';
+// import { collections } from './data/movies';
+
+const collections = require('./data/movies.json')
+    .map(movieList =>
+        movieList.map(item => new MovieData(item)));
 
 ReactDOM.render(
-  <React.StrictMode>
-    <h1>Hello World</h1>
-  </React.StrictMode>,
+  <App collections={collections}/>,
   document.getElementById('root')
 );
 
