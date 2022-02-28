@@ -5,8 +5,11 @@ import { MovieData } from "./dataClasses";
 import App from "./components/App";
 // import { collections } from './data/movies';
 
-const collections = require("./data/movies.json").map((movieList) =>
-  movieList.map((item) => new MovieData(item))
+const collections = require("./data/movies.json").map(collection =>
+  ({
+    title: collection.title,
+    movies: collection.movies.map(movie => new MovieData(movie))
+  })
 );
 
 ReactDOM.render(

@@ -14,25 +14,30 @@ class Collection extends Component {
     ));
 
     return (
-      <div className="col-4">
-        <table className="table table-info">
-          <thead>
-            <tr>
-              <th scope="col">Title</th>
-              <th scope="col">Description</th>
-              <th scope="col">Year</th>
-              <th scope="col">Genre</th>
-            </tr>
-          </thead>
-          <tbody>{movies}</tbody>
-        </table>
-      </div>
+        <div className='row'>
+          <h3>{this.props.title}</h3>
+          {movies}
+        </div>
+      // <div className="col-4">
+      //   <table className="table table-info">
+      //     <thead>
+      //       <tr>
+      //         <th scope="col">Title</th>
+      //         <th scope="col">Description</th>
+      //         <th scope="col">Year</th>
+      //         <th scope="col">Genre</th>
+      //       </tr>
+      //     </thead>
+      //     <tbody>{movies}</tbody>
+      //   </table>
+      // </div>
     );
   }
 }
 
 Collection.propTypes = {
-  movieList: PropTypes.arrayOf(PropTypes.instanceOf(MovieData)),
+  title: PropTypes.string,
+  movies: PropTypes.arrayOf(PropTypes.instanceOf(MovieData)),
 };
 
 class MovieCollections extends Component {
@@ -41,11 +46,11 @@ class MovieCollections extends Component {
   }
 
   render() {
-    const collections = this.props.collections.map((movieList, index) => (
-      <Collection key={index} movies={movieList} />
-    ));
-
-    return collections;
+    return (
+        this.props.collections.map((collection, index) =>
+          <Collection key={index} title={collection.title} movies={collection.movies} />
+        )
+    );
   }
 }
 

@@ -21,10 +21,4 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
-  collections: PropTypes.arrayOf(
-    PropTypes.arrayOf(PropTypes.instanceOf(MovieData))
-  ).isRequired,
-};
-
 export default App;
