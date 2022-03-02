@@ -14,7 +14,7 @@ class Collection extends Component {
     ));
 
     return (
-      <div className="row m-5">
+      <div className="row">
         <h3 className="display-6">{this.props.title}</h3>
         {movies}
       </div>
