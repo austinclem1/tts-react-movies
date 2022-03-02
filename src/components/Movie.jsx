@@ -9,15 +9,15 @@ class Movie extends Component {
   render() {
     const { title, description, year, genre } = this.props.data;
     return (
-        <div className='col-12 col-sm-6 col-lg-4'>
-      <div className='card bg-light'>
-        <div className='card-body'>
-          <h5 className='card-title'>{`${title} (${year})`}</h5>
-          <hr />
-          <p className='card-text'>{description}</p>
+      <div className="col-sm-6 col-lg-4 m-3">
+        <div className="card h-100 bg-light">
+          <div className="card-body">
+            <h5 className="card-title">{`${title} (${year})`}</h5>
+            <hr />
+            <p className="card-text">{description}</p>
+          </div>
         </div>
       </div>
-        </div>
       // <tr>
       //   <td>{title}</td>
       //   <td>{description}</td>

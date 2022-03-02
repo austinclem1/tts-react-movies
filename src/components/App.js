@@ -12,10 +12,10 @@ class App extends Component {
   render() {
     return (
       <div className="m-5">
-        <h1 className="d-flex justify-content-center">Movie Collections</h1>
-        <div className="row">
-          <MovieCollections collections={this.props.collections} />
-        </div>
+        <h1 className="display-2 d-flex justify-content-center">
+          Movie Collections
+        </h1>
+        <MovieCollections collections={this.props.collections} />
       </div>
     );
   }

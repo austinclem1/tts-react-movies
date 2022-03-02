@@ -14,23 +14,10 @@ class Collection extends Component {
     ));
 
     return (
-        <div className='row'>
-          <h3>{this.props.title}</h3>
-          {movies}
-        </div>
-      // <div className="col-4">
-      //   <table className="table table-info">
-      //     <thead>
-      //       <tr>
-      //         <th scope="col">Title</th>
-      //         <th scope="col">Description</th>
-      //         <th scope="col">Year</th>
-      //         <th scope="col">Genre</th>
-      //       </tr>
-      //     </thead>
-      //     <tbody>{movies}</tbody>
-      //   </table>
-      // </div>
+      <div className="row m-5">
+        <h3 className="display-6">{this.props.title}</h3>
+        {movies}
+      </div>
     );
   }
 }
@@ -46,11 +33,16 @@ class MovieCollections extends Component {
   }
 
   render() {
-    return (
-        this.props.collections.map((collection, index) =>
-          <Collection key={index} title={collection.title} movies={collection.movies} />
-        )
-    );
+    return this.props.collections.map((collection, index) => (
+      <>
+        <Collection
+          key={index}
+          title={collection.title}
+          movies={collection.movies}
+        />
+        <hr />
+      </>
+    ));
   }
 }
 
