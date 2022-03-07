@@ -11,7 +11,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="m-5">
+      <div className="container-sm">
         <h1 className="display-2 m-5 d-flex justify-content-center">
           Movie Collections
         </h1>
